@@ -2,6 +2,16 @@
   font-family: "UniNeueRegular";
   src: local("UniNeueRegular"), local("UniNeueRegular"), url(UniNeueRegular.ttf);
 }
+@keyframes myAnimation {
+  10%, 90% {
+    top: -200%;
+    left: -200%;
+  }
+  40%, 60% {
+    top: 200%;
+    left: 200%;
+  }
+}
 body {
   font-family: "UniNeueRegular", sans-serif;
   max-width: 100vw;
@@ -97,7 +107,7 @@ body #burger-menu.open span:nth-child(3) {
   align-items: center;
 }
 .header__logo img {
-  width: 9.6354166667vw;
+  min-width: 9.6354166667vw;
 }
 .header__logo .header__logo__description {
   padding-left: 35px;
@@ -114,6 +124,8 @@ body #burger-menu.open span:nth-child(3) {
 }
 .header__map .map img {
   padding-right: 0.5208333333vw;
+  min-width: 3.6458333333vw;
+  max-width: 3.6458333333vw;
 }
 .header__map .open-map iframe {
   display: block;
@@ -129,12 +141,27 @@ body #burger-menu.open span:nth-child(3) {
 .header__button {
   background-color: #313d4b;
   padding: 1.5625vw;
+  position: relative;
   border-radius: 10px;
 }
 .header__button a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+}
+.header__button .shine {
+  position: absolute;
+  top: -200%;
+  left: -200%;
+  width: 80px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.884);
+  transform: rotate(-45deg);
+  animation-name: Shining;
+  animation-duration: 50000ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 .header__contacts {
@@ -311,7 +338,7 @@ body #burger-menu.open span:nth-child(3) {
     align-items: center;
   }
   .header .header__logo img {
-    width: 150px;
+    width: 185px;
     padding: 20px;
   }
   .header .header__logo .header__logo__description {

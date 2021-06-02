@@ -18,5 +18,5 @@ const menu = document.querySelector('.nav');
 burger.addEventListener('click', () => {
     burger.classList.toggle('open');
     menu.classList.toggle('nav-open');
-
 })
+
