@@ -1,11 +1,4 @@
-// @import "../fonts/fonts.css";
-
-@font-face {
-    font-family: "UniNeueRegular";
-    src: local("UniNeueRegular"),
-        local("UniNeueRegular"),
-        url(fonts/UniNeueRegular.ttf);
-}
+@import url("../fonts/fonts.css");
 
 $ssm: 320px;
 $sm: 540px;
@@ -34,7 +27,7 @@ $vw-viewport: 1920;
 }
 
 body {
-    font-family: 'UniNeueRegular', sans-serif;
+    font-family: 'Uni Neue', sans-serif;
     max-width: 100vw;
     height: 100vh;
     margin: 0 auto;
@@ -106,9 +99,6 @@ body {
     justify-content: space-around;
     font-size: get-vw(18px);
     align-items: center;
-
-
-
     .open {
         span {
             &:nth-child(2) {
@@ -204,6 +194,7 @@ body {
         font-weight: bold;
         transition: all 0.2s ease-in-out;
         overflow: hidden;
+        cursor: pointer;
     }
     &:before {
         content: "";
@@ -369,6 +360,7 @@ body {
                 border: none;
                 border-radius: 5px;
                 position: relative;
+                cursor: pointer;
 
                 i {
                     font-size: get-vw(50px);
