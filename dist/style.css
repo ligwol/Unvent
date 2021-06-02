@@ -1,15 +1,13 @@
 @font-face {
   font-family: "UniNeueRegular";
-  src: local("UniNeueRegular"), local("UniNeueRegular"), url(UniNeueRegular.ttf);
+  src: local("UniNeueRegular"), local("UniNeueRegular"), url(fonts/UniNeueRegular.ttf);
 }
-@keyframes myAnimation {
-  10%, 90% {
-    top: -200%;
-    left: -200%;
+@keyframes Shining {
+  0% {
+    transform: skewY(-45deg) translateX(0);
   }
-  40%, 60% {
-    top: 200%;
-    left: 200%;
+  50% {
+    transform: skewY(-45deg) translateX(22em);
   }
 }
 body {
@@ -148,20 +146,27 @@ body #burger-menu.open span:nth-child(3) {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
 }
-.header__button .shine {
+.header__button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
   position: absolute;
-  top: -200%;
-  left: -200%;
-  width: 80px;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.884);
-  transform: rotate(-45deg);
-  animation-name: Shining;
-  animation-duration: 50000ms;
-  animation-delay: 1000ms;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+  top: 0;
+  left: -5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.header__button:hover {
+  color: #fff;
+}
+.header__button:hover:before {
+  transform: skewX(-45deg) translateX(40em);
+  transition: all 0.5s ease-in-out;
 }
 
 .header__contacts {
@@ -170,6 +175,7 @@ body #burger-menu.open span:nth-child(3) {
   flex-wrap: nowrap;
   flex-basis: 20%;
   font-weight: 800;
+  z-index: 5;
 }
 .header__contacts i {
   color: #fe544f;
@@ -282,6 +288,7 @@ body #burger-menu.open span:nth-child(3) {
   color: #fff;
   border: none;
   border-radius: 5px;
+  position: relative;
 }
 .main .main__down .main__down__discount .discount__button i {
   font-size: 2.6041666667vw;
@@ -291,6 +298,27 @@ body #burger-menu.open span:nth-child(3) {
   font-size: 1.09375vw;
   text-transform: uppercase;
   font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+.main .main__down .main__down__discount .discount__button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.404);
+  height: 100%;
+  width: 2em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.main .main__down .main__down__discount .discount__button:hover {
+  color: #fff;
+}
+.main .main__down .main__down__discount .discount__button:hover:before {
+  transform: skewX(-45deg) translateX(40em);
+  transition: all 500ms ease-in-out;
 }
 .main .main__down .main__down__photoslide {
   display: flex;
@@ -304,6 +332,7 @@ body #burger-menu.open span:nth-child(3) {
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 5;
 }
 .main .main__down .main__down__photoslide .photoslide a {
   padding-right: 0.5208333333vw;
